@@ -1,0 +1,6 @@
+section {
+  margin-top: 100px;
+  caret-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+}
