@@ -2,5 +2,20 @@ section {
   margin-top: 100px;
   caret-color: transparent;
   display: flex;
-  flex-wrap: wrap;
+}
+
+.video-1-dimensions {
+  width: 83vmin;
+}
+
+@media (max-width: 1024px) {
+  section {
+    flex-wrap: wrap;
+    justify-content: space-evenly
+  }
+
+  .video-1-dimensions {
+    width: 99vmin;
+    height: 48vmin;
+  }
 }
