@@ -2,10 +2,7 @@
 
 Adds a chat to the video player. Activated when the player starts playing. Saves messages to localstorage.
 
-<img src="Preview.png" alt="Player Preview" style=
-"max-width: 50%
-margin: 0 auto;
-display: block;">
+<img src="Preview.png" alt="Player Preview" style="max-width: 50%; margin: 0 auto;display: block;">
 
 ## Installation
 
