@@ -1,32 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" /><!--Компонент vjs-->
-  <link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet"> <!--Компонент vjs-->
+  <meta charset="utf-8">
+  <title>videojs-chat Demo</title>
+  <link href="node_modules/video.js/dist/video-js.css" rel="stylesheet">
+  <link href="dist/videojs-chat.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="pluginDev/plugin-dev.css"><!--Компонент чат-->
-  <title>Player</title>
 </head>
-
 <body>
-  <section id="playerChat">
-    <div class="player-module">
-      <div class="player">
-        <video id="video-1" class="video-js vjs-theme-forest" controls preload="auto" loop="loop"
-          poster="//vjs.zencdn.net/v/oceans.png" data-setup='{}'>
-          <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-          </source>
-        </video>
-      </div>
-    </div>
+  <section style="display: flex;">
+    <video id="videojs-chat-player" class="video-js vjs-default-skin" controls>
+      <source src="//vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
+      <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>
+    </video>
   </section>
-
-  <script src="pluginDev/plugin-dev.js"></script> <!--Компонент чат-->
-  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script><!--Компонент vjs-->
+  <script src="node_modules/video.js/dist/video.js"></script>
+  <script src="dist/videojs-chat.js"></script>
+  <script>
+    (function(window, videojs) {
+      var examplePlayer = window.examplePlayer = videojs('videojs-chat-player');
+      var chat = window.chat = examplePlayer.chat();
+    }(window, window.videojs));
+  </script>
 </body>
-
 </html>

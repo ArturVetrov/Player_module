@@ -1,0 +1,91 @@
+/**
+ * css for videojs-chat
+ * With the default plugins for postcss you can
+ * - @import files, they will be inlined during build
+ * - not worry about browser prefixes, they will be handled
+ * - nest selectors. This follows the css specification that is
+ *   currently out on some browsers. See https://tabatkins.github.io/specs/css-nesting/
+ * - custom properties (aka variables) via the var(--var-name) syntax. See
+ *   https://www.w3.org/TR/css-variables-1/
+ */
+
+
+/* Note: all vars must be defined here, there are no "local" vars */
+:root {
+  --main-color: red;
+  --base-font-size: 9;
+  --font-size: 7;
+}
+
+.chat {
+  border: 1px solid #333;
+  width: 45%;
+  min-width: 200px;
+  max-width: 600px;
+  height: 100%;
+  background: #555;
+  color: #fff;
+  display: none;
+  
+}
+
+.chat-messages {
+  height: 365px;
+  overflow: auto;
+  padding: 3px;
+}
+
+.chat-messages__content {
+  padding: 1px;
+}
+
+.chat__messages {
+  border-left: 3px solid #333;
+  margin-top: 2px;
+  padding: 2px;
+}
+
+.chat-input {
+  min-height: 6%;
+}
+
+input {
+  font-size: 12px;
+  background: #333;
+  color: #fff;
+  border: 0;
+  margin: 1px;
+  height: 23px;
+  caret-color: auto;
+}
+
+.chat-form__input {
+  width: 80%;
+}
+
+.chat-form__button {
+  width: 18%
+}
+
+
+.video-js {
+
+  &.vjs-chat {
+    /* This class is added to the video.js element by the plugin by default. */
+    display: block;
+
+    & .remove-me, & .remove-me-too, &.finally-remove-me {
+      /* examples of postcss syntax, you probably want to remove this */
+
+      color: var(--main-color);
+
+      /**
+       * Note that you have to use calc and multiply by a value with a unit
+       * prepending the unit like `var(--base-font-size)px` or
+       * `calc(10 * var(--base-font-size)em` will NOT work!
+       */
+      font-size: calc(var(--font-size) * 8 * var(--base-font-size) * 1px);
+
+    }
+  }
+}
